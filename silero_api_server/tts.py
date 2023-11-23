@@ -77,7 +77,7 @@ class SileroTtsService:
             combined_wav.export("test.wav", format="wav")
             audio_path = Path("test.wav")
         else:
-            audio_path = Path(self.model.save_wav(text=text,speaker=speaker,sample_rate=self.sample_rate))
+            audio_path = Path(self.model.save_wav(ssml_text=text,speaker=speaker,sample_rate=self.sample_rate))
         if session:
             self.save_session_audio(audio_path, session, speaker)
         return audio_path
